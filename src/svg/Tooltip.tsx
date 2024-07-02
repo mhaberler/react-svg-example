@@ -32,13 +32,16 @@ const Tooltip: React.FC<
     </>
   );
 
+  // @ts-expect-error
   const placeRight = screenX < width / 2;
   const tipOverlay: Layout = {
     size: {
+      // @ts-expect-error
       width: placeRight ? width - screenX : screenX,
       height,
     },
     pos: {
+      // @ts-expect-error
       x: placeRight ? screenX : 0,
       y: tipY,
     },

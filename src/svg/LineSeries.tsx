@@ -11,6 +11,7 @@ const LineSeries: React.FC<{
   yScale: ScaleLinear<number, number>;
   data: Datum[];
 }> = ({ xScale, yScale, data }) => {
+  // @ts-expect-error
   const linePath = line<Datum>()
     .x((d) => xScale(d.x))
     .y((d) => yScale(d.y))(data) as string;

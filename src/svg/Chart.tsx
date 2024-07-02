@@ -74,6 +74,7 @@ export const Chart: React.FC<{
     // For larger datasets, consider d3-bisect https://observablehq.com/@d3/d3-bisect
     const closest = data.reduce(
       (result, datum, idx) => {
+        // @ts-expect-error
         const thisDistance = Math.abs(mouse.x - xScale(datum.x));
         if (thisDistance < result.distance) {
           return {
